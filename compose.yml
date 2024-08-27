@@ -1,0 +1,16 @@
+volumes:
+  cloud-vol: {}
+
+services:
+  
+  cloud:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: ['yarn', 'dev']
+    ports:
+      - 3000:3000/tcp
+    volumes:
+      - .:/cloud
+  
+ 
